@@ -1,0 +1,115 @@
+[
+  {
+    "metricName": "Traffic",
+    "information": [
+      {
+        "totalSessionCount": "4821",
+        "totalBotSessionCount": "48",
+        "distinctUserCount": "3568",
+        "pagesPerSessionPercentage": 2.14
+      }
+    ]
+  },
+  {
+    "metricName": "EngagementTime",
+    "information": [
+      {
+        "totalTime": "312",
+        "activeTime": "184"
+      }
+    ]
+  },
+  {
+    "metricName": "ScrollDepth",
+    "information": [
+      {
+        "averageScrollDepth": 57.3
+      }
+    ]
+  },
+  {
+    "metricName": "DeadClickCount",
+    "information": [
+      {
+        "sessionsCount": "4821",
+        "sessionsWithMetricPercentage": 6.7,
+        "sessionsWithoutMetricPercentage": 93.3,
+        "pagesViews": "10124",
+        "subTotal": "517"
+      }
+    ]
+  },
+  {
+    "metricName": "RageClickCount",
+    "information": [
+      {
+        "sessionsCount": "4821",
+        "sessionsWithMetricPercentage": 1.2,
+        "sessionsWithoutMetricPercentage": 98.8,
+        "pagesViews": "10124",
+        "subTotal": "93"
+      }
+    ]
+  },
+  {
+    "metricName": "QuickbackClick",
+    "information": [
+      {
+        "sessionsCount": "4821",
+        "sessionsWithMetricPercentage": 9.4,
+        "sessionsWithoutMetricPercentage": 90.6,
+        "pagesViews": "10124",
+        "subTotal": "725"
+      }
+    ]
+  },
+  {
+    "metricName": "ExcessiveScroll",
+    "information": [
+      {
+        "sessionsCount": "4821",
+        "sessionsWithMetricPercentage": 3.1,
+        "sessionsWithoutMetricPercentage": 96.9,
+        "pagesViews": "10124",
+        "subTotal": "239"
+      }
+    ]
+  },
+  {
+    "metricName": "ScriptErrorCount",
+    "information": [
+      {
+        "sessionsCount": "4821",
+        "sessionsWithMetricPercentage": 4.8,
+        "sessionsWithoutMetricPercentage": 95.2,
+        "pagesViews": "10124",
+        "subTotal": "370"
+      }
+    ]
+  },
+  {
+    "metricName": "ErrorClickCount",
+    "information": [
+      {
+        "sessionsCount": "4821",
+        "sessionsWithMetricPercentage": 0.9,
+        "sessionsWithoutMetricPercentage": 99.1,
+        "pagesViews": "10124",
+        "subTotal": "69"
+      }
+    ]
+  },
+  {
+    "metricName": "PopularPages",
+    "information": [
+      {
+        "url": "https://codebasics.io/courses",
+        "visitsCount": "1840"
+      },
+      {
+        "url": "https://codebasics.io/bootcamps/data-analytics?utm_source=yt",
+        "visitsCount": "920"
+      }
+    ]
+  }
+]

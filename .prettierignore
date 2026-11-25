@@ -1,0 +1,6 @@
+src/generated/
+prisma/migrations/
+.next/
+fixtures/
+package-lock.json
+*.md

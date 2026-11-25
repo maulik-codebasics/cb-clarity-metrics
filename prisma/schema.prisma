@@ -1,0 +1,207 @@
+// Clarity Insights schema. See PRD.md §5.
+// Table and column names are snake_case in Postgres; Prisma models use camelCase.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum RunTrigger {
+  CRON_CLI
+  CRON_HTTP
+  MANUAL
+  REPROCESS
+}
+
+enum RunStatus {
+  RUNNING
+  SUCCESS
+  PARTIAL_SUCCESS
+  FAILED
+  SKIPPED_LOCKED
+}
+
+enum StepStatus {
+  RUNNING
+  SUCCESS
+  FAILED
+  SKIPPED_BUDGET
+}
+
+enum ErrorCode {
+  AUTH_ERROR
+  RATE_LIMITED
+  BAD_REQUEST
+  SERVER_ERROR
+  NETWORK_ERROR
+  TIMEOUT
+  PARSE_ERROR
+  DB_ERROR
+  BUDGET_EXHAUSTED
+  UNKNOWN
+}
+
+enum KpiUnit {
+  percent
+  count
+  seconds
+  minutes
+  ratio
+}
+
+enum KpiAggregation {
+  weighted_avg
+  avg
+  sum
+  last
+}
+
+model PipelineRun {
+  id               String     @id @default(uuid()) @db.Uuid
+  trigger          RunTrigger
+  triggeredBy      String     @map("triggered_by")
+  status           RunStatus
+  snapshotDate     DateTime   @map("snapshot_date") @db.Date
+  numOfDays        Int        @default(1) @map("num_of_days")
+  windowStart      DateTime?  @map("window_start") @db.Timestamptz(3)
+  windowEnd        DateTime?  @map("window_end") @db.Timestamptz(3)
+  reprocessOfRunId String?    @map("reprocess_of_run_id") @db.Uuid
+  startedAt        DateTime   @map("started_at") @db.Timestamptz(3)
+  endedAt          DateTime?  @map("ended_at") @db.Timestamptz(3)
+  durationMs       Int?       @map("duration_ms")
+  pullsTotal       Int        @default(0) @map("pulls_total")
+  pullsSucceeded   Int        @default(0) @map("pulls_succeeded")
+  pullsFailed      Int        @default(0) @map("pulls_failed")
+  pullsSkipped     Int        @default(0) @map("pulls_skipped")
+  apiCallsUsed     Int        @default(0) @map("api_calls_used")
+  rowsFetched      Int        @default(0) @map("rows_fetched")
+  metricsWritten   Int        @default(0) @map("metrics_written")
+  errorCode        ErrorCode? @map("error_code")
+  errorMessage     String?    @map("error_message")
+  errorDetails     Json?      @map("error_details")
+  createdAt        DateTime   @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  reprocessOf  PipelineRun?      @relation("Reprocess", fields: [reprocessOfRunId], references: [id], onDelete: SetNull)
+  reprocesses  PipelineRun[]     @relation("Reprocess")
+  steps        PipelineRunStep[]
+  metricValues MetricValue[]
+  apiCalls     ApiCallLog[]
+
+  @@index([startedAt(sort: Desc)])
+  @@index([status, startedAt])
+  @@index([snapshotDate])
+  @@map("pipeline_runs")
+}
+
+/// One row per pull attempt (retries are separate rows).
+model PipelineRunStep {
+  id             String     @id @default(uuid()) @db.Uuid
+  runId          String     @map("run_id") @db.Uuid
+  pullKey        String     @map("pull_key")
+  dimensions     String[]
+  attempt        Int
+  httpStatus     Int?       @map("http_status")
+  status         StepStatus
+  startedAt      DateTime   @map("started_at") @db.Timestamptz(3)
+  endedAt        DateTime?  @map("ended_at") @db.Timestamptz(3)
+  durationMs     Int?       @map("duration_ms")
+  rowsFetched    Int        @default(0) @map("rows_fetched")
+  metricsWritten Int        @default(0) @map("metrics_written")
+  errorCode      ErrorCode? @map("error_code")
+  errorMessage   String?    @map("error_message")
+  errorDetails   Json?      @map("error_details")
+
+  run          PipelineRun   @relation(fields: [runId], references: [id], onDelete: Cascade)
+  rawResponses RawResponse[]
+  apiCalls     ApiCallLog[]
+
+  @@index([runId])
+  @@map("pipeline_run_steps")
+}
+
+model RawResponse {
+  id           String   @id @default(uuid()) @db.Uuid
+  stepId       String   @map("step_id") @db.Uuid
+  snapshotDate DateTime @map("snapshot_date") @db.Date
+  pullKey      String   @map("pull_key")
+  payload      Json
+  fetchedAt    DateTime @default(now()) @map("fetched_at") @db.Timestamptz(3)
+
+  step PipelineRunStep @relation(fields: [stepId], references: [id], onDelete: Cascade)
+
+  @@index([fetchedAt])
+  @@index([snapshotDate, pullKey])
+  @@map("raw_responses")
+}
+
+/// Long/narrow metric storage. Missing dimensions are '' (not NULL) so the unique index works.
+model MetricValue {
+  id           BigInt   @id @default(autoincrement())
+  snapshotDate DateTime @map("snapshot_date") @db.Date
+  pullKey      String   @map("pull_key")
+  metricName   String   @map("metric_name")
+  field        String
+  dim1Name     String   @default("") @map("dim1_name")
+  dim1Value    String   @default("") @map("dim1_value")
+  dim2Name     String   @default("") @map("dim2_name")
+  dim2Value    String   @default("") @map("dim2_value")
+  dim3Name     String   @default("") @map("dim3_name")
+  dim3Value    String   @default("") @map("dim3_value")
+  value        Decimal  @db.Decimal(20, 6)
+  runId        String   @map("run_id") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  run PipelineRun @relation(fields: [runId], references: [id])
+
+  @@unique([snapshotDate, pullKey, metricName, field, dim1Value, dim2Value, dim3Value], map: "metric_values_natural_key")
+  @@index([snapshotDate])
+  @@index([metricName, field, snapshotDate])
+  @@index([pullKey, snapshotDate])
+  @@map("metric_values")
+}
+
+model ApiCallLog {
+  id         BigInt   @id @default(autoincrement())
+  runId      String?  @map("run_id") @db.Uuid
+  stepId     String?  @map("step_id") @db.Uuid
+  calledAt   DateTime @default(now()) @map("called_at") @db.Timestamptz(3)
+  httpStatus Int?     @map("http_status")
+  /// IST date shifted by CLARITY_BUDGET_RESET_OFFSET_MINUTES; the day the call counts against.
+  budgetDate DateTime @map("budget_date") @db.Date
+
+  run  PipelineRun?     @relation(fields: [runId], references: [id], onDelete: SetNull)
+  step PipelineRunStep? @relation(fields: [stepId], references: [id], onDelete: SetNull)
+
+  @@index([budgetDate])
+  @@map("api_call_log")
+}
+
+model PullConfig {
+  key          String   @id
+  dimensions   String[]
+  enabled      Boolean  @default(true)
+  displayOrder Int      @map("display_order")
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedBy    String?  @map("updated_by")
+
+  @@map("pull_configs")
+}
+
+model KpiDefinition {
+  key            String         @id
+  label          String
+  metricName     String         @map("metric_name")
+  field          String
+  unit           KpiUnit
+  aggregation    KpiAggregation
+  higherIsBetter Boolean        @map("higher_is_better")
+  displayOrder   Int            @map("display_order")
+  updatedAt      DateTime       @updatedAt @map("updated_at") @db.Timestamptz(3)
+  updatedBy      String?        @map("updated_by")
+
+  @@map("kpi_definitions")
+}

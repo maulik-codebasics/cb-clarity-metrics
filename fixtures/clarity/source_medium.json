@@ -1,0 +1,339 @@
+[
+  {
+    "metricName": "Traffic",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "totalSessionCount": "2210",
+        "totalBotSessionCount": "22",
+        "distinctUserCount": "1635",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "totalSessionCount": "1380",
+        "totalBotSessionCount": "14",
+        "distinctUserCount": "1021",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "totalSessionCount": "940",
+        "totalBotSessionCount": "9",
+        "distinctUserCount": "696",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "totalSessionCount": "291",
+        "totalBotSessionCount": "3",
+        "distinctUserCount": "215",
+        "pagesPerSessionPercentage": 2.14
+      }
+    ]
+  },
+  {
+    "metricName": "EngagementTime",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "totalTime": "330",
+        "activeTime": "195"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "totalTime": "280",
+        "activeTime": "160"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "totalTime": "350",
+        "activeTime": "210"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "totalTime": "390",
+        "activeTime": "240"
+      }
+    ]
+  },
+  {
+    "metricName": "ScrollDepth",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "averageScrollDepth": 58.1
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "averageScrollDepth": 54.2
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "averageScrollDepth": 60.3
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "averageScrollDepth": 64.8
+      }
+    ]
+  },
+  {
+    "metricName": "DeadClickCount",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "sessionsCount": "2210",
+        "sessionsWithMetricPercentage": 6.7,
+        "sessionsWithoutMetricPercentage": 93.3,
+        "pagesViews": "4641",
+        "subTotal": "237"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "sessionsCount": "1380",
+        "sessionsWithMetricPercentage": 7.4,
+        "sessionsWithoutMetricPercentage": 92.6,
+        "pagesViews": "2898",
+        "subTotal": "163"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "sessionsCount": "940",
+        "sessionsWithMetricPercentage": 5.9,
+        "sessionsWithoutMetricPercentage": 94.1,
+        "pagesViews": "1974",
+        "subTotal": "89"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "sessionsCount": "291",
+        "sessionsWithMetricPercentage": 4.8,
+        "sessionsWithoutMetricPercentage": 95.2,
+        "pagesViews": "611",
+        "subTotal": "22"
+      }
+    ]
+  },
+  {
+    "metricName": "RageClickCount",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "sessionsCount": "2210",
+        "sessionsWithMetricPercentage": 1.2,
+        "sessionsWithoutMetricPercentage": 98.8,
+        "pagesViews": "4641",
+        "subTotal": "42"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "sessionsCount": "1380",
+        "sessionsWithMetricPercentage": 1.5,
+        "sessionsWithoutMetricPercentage": 98.5,
+        "pagesViews": "2898",
+        "subTotal": "33"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "sessionsCount": "940",
+        "sessionsWithMetricPercentage": 0.9,
+        "sessionsWithoutMetricPercentage": 99.1,
+        "pagesViews": "1974",
+        "subTotal": "14"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "sessionsCount": "291",
+        "sessionsWithMetricPercentage": 0.6,
+        "sessionsWithoutMetricPercentage": 99.4,
+        "pagesViews": "611",
+        "subTotal": "3"
+      }
+    ]
+  },
+  {
+    "metricName": "QuickbackClick",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "sessionsCount": "2210",
+        "sessionsWithMetricPercentage": 9.4,
+        "sessionsWithoutMetricPercentage": 90.6,
+        "pagesViews": "4641",
+        "subTotal": "332"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "sessionsCount": "1380",
+        "sessionsWithMetricPercentage": 10.2,
+        "sessionsWithoutMetricPercentage": 89.8,
+        "pagesViews": "2898",
+        "subTotal": "225"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "sessionsCount": "940",
+        "sessionsWithMetricPercentage": 8,
+        "sessionsWithoutMetricPercentage": 92,
+        "pagesViews": "1974",
+        "subTotal": "120"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "sessionsCount": "291",
+        "sessionsWithMetricPercentage": 6.6,
+        "sessionsWithoutMetricPercentage": 93.4,
+        "pagesViews": "611",
+        "subTotal": "31"
+      }
+    ]
+  },
+  {
+    "metricName": "ExcessiveScroll",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "sessionsCount": "2210",
+        "sessionsWithMetricPercentage": 3.1,
+        "sessionsWithoutMetricPercentage": 96.9,
+        "pagesViews": "4641",
+        "subTotal": "110"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "sessionsCount": "1380",
+        "sessionsWithMetricPercentage": 3.3,
+        "sessionsWithoutMetricPercentage": 96.7,
+        "pagesViews": "2898",
+        "subTotal": "73"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "sessionsCount": "940",
+        "sessionsWithMetricPercentage": 2.9,
+        "sessionsWithoutMetricPercentage": 97.1,
+        "pagesViews": "1974",
+        "subTotal": "44"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "sessionsCount": "291",
+        "sessionsWithMetricPercentage": 2.1,
+        "sessionsWithoutMetricPercentage": 97.9,
+        "pagesViews": "611",
+        "subTotal": "10"
+      }
+    ]
+  },
+  {
+    "metricName": "ScriptErrorCount",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "sessionsCount": "2210",
+        "sessionsWithMetricPercentage": 4.8,
+        "sessionsWithoutMetricPercentage": 95.2,
+        "pagesViews": "4641",
+        "subTotal": "170"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "sessionsCount": "1380",
+        "sessionsWithMetricPercentage": 5,
+        "sessionsWithoutMetricPercentage": 95,
+        "pagesViews": "2898",
+        "subTotal": "110"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "sessionsCount": "940",
+        "sessionsWithMetricPercentage": 4.4,
+        "sessionsWithoutMetricPercentage": 95.6,
+        "pagesViews": "1974",
+        "subTotal": "66"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "sessionsCount": "291",
+        "sessionsWithMetricPercentage": 3.9,
+        "sessionsWithoutMetricPercentage": 96.1,
+        "pagesViews": "611",
+        "subTotal": "18"
+      }
+    ]
+  },
+  {
+    "metricName": "ErrorClickCount",
+    "information": [
+      {
+        "Source": "google",
+        "Medium": "organic",
+        "sessionsCount": "2210",
+        "sessionsWithMetricPercentage": 0.9,
+        "sessionsWithoutMetricPercentage": 99.1,
+        "pagesViews": "4641",
+        "subTotal": "32"
+      },
+      {
+        "Source": "youtube.com",
+        "Medium": "referral",
+        "sessionsCount": "1380",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "2898",
+        "subTotal": "22"
+      },
+      {
+        "Source": "(direct)",
+        "Medium": "(none)",
+        "sessionsCount": "940",
+        "sessionsWithMetricPercentage": 0.7,
+        "sessionsWithoutMetricPercentage": 99.3,
+        "pagesViews": "1974",
+        "subTotal": "11"
+      },
+      {
+        "Source": "newsletter",
+        "Medium": "email",
+        "sessionsCount": "291",
+        "sessionsWithMetricPercentage": 0.5,
+        "sessionsWithoutMetricPercentage": 99.5,
+        "pagesViews": "611",
+        "subTotal": "2"
+      }
+    ]
+  }
+]

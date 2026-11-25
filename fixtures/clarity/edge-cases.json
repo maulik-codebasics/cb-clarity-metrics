@@ -1,0 +1,62 @@
+[
+  {
+    "metricName": "Traffic",
+    "information": [
+      {
+        "totalSessionCount": "1,234",
+        "totalBotSessionCount": "10",
+        "distinctUserCount": 900,
+        "pagesPerSessionPercentage": "2.14",
+        "OS": "Windows"
+      },
+      {
+        "totalSessionCount": "77",
+        "OS": "10"
+      },
+      {
+        "OS": "Linux",
+        "totalSessionCount": null,
+        "note": {
+          "nested": true
+        }
+      }
+    ]
+  },
+  {
+    "metricName": "BrandNewMetric",
+    "information": [
+      {
+        "someCount": "5",
+        "label": "x"
+      }
+    ]
+  },
+  {
+    "metricName": "DeadClickCount",
+    "information": "not-an-array"
+  },
+  {
+    "information": [
+      {
+        "sessionsCount": "1"
+      }
+    ]
+  },
+  "garbage",
+  {
+    "metricName": "ScrollDepth",
+    "information": [
+      {
+        "averageScrollDepth": "NaN"
+      },
+      {
+        "averageScrollDepth": "",
+        "URL": "https://codebasics.io/a?x=1"
+      },
+      {
+        "averageScrollDepth": "40",
+        "URL": "https://codebasics.io/a?x=2"
+      }
+    ]
+  }
+]
