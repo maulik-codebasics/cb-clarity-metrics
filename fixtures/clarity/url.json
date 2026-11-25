@@ -1,0 +1,431 @@
+[
+  {
+    "metricName": "Traffic",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "totalSessionCount": "1500",
+        "totalBotSessionCount": "15",
+        "distinctUserCount": "1110",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "totalSessionCount": "1100",
+        "totalBotSessionCount": "11",
+        "distinctUserCount": "814",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "totalSessionCount": "800",
+        "totalBotSessionCount": "8",
+        "distinctUserCount": "592",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "totalSessionCount": "620",
+        "totalBotSessionCount": "6",
+        "distinctUserCount": "459",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "totalSessionCount": "480",
+        "totalBotSessionCount": "5",
+        "distinctUserCount": "355",
+        "pagesPerSessionPercentage": 2.14
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "totalSessionCount": "321",
+        "totalBotSessionCount": "3",
+        "distinctUserCount": "238",
+        "pagesPerSessionPercentage": 2.14
+      }
+    ]
+  },
+  {
+    "metricName": "EngagementTime",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "totalTime": "300",
+        "activeTime": "180"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "totalTime": "290",
+        "activeTime": "175"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "totalTime": "280",
+        "activeTime": "170"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "totalTime": "270",
+        "activeTime": "165"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "totalTime": "260",
+        "activeTime": "160"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "totalTime": "250",
+        "activeTime": "155"
+      }
+    ]
+  },
+  {
+    "metricName": "ScrollDepth",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "averageScrollDepth": 55
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "averageScrollDepth": 56
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "averageScrollDepth": 57
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "averageScrollDepth": 58
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "averageScrollDepth": 59
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "averageScrollDepth": 60
+      }
+    ]
+  },
+  {
+    "metricName": "DeadClickCount",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "sessionsCount": "1500",
+        "sessionsWithMetricPercentage": 6,
+        "sessionsWithoutMetricPercentage": 94,
+        "pagesViews": "3150",
+        "subTotal": "144"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "sessionsCount": "1100",
+        "sessionsWithMetricPercentage": 7,
+        "sessionsWithoutMetricPercentage": 93,
+        "pagesViews": "2310",
+        "subTotal": "123"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "sessionsCount": "800",
+        "sessionsWithMetricPercentage": 8,
+        "sessionsWithoutMetricPercentage": 92,
+        "pagesViews": "1680",
+        "subTotal": "102"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "sessionsCount": "620",
+        "sessionsWithMetricPercentage": 9,
+        "sessionsWithoutMetricPercentage": 91,
+        "pagesViews": "1302",
+        "subTotal": "89"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "sessionsCount": "480",
+        "sessionsWithMetricPercentage": 10,
+        "sessionsWithoutMetricPercentage": 90,
+        "pagesViews": "1008",
+        "subTotal": "77"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "sessionsCount": "321",
+        "sessionsWithMetricPercentage": 11,
+        "sessionsWithoutMetricPercentage": 89,
+        "pagesViews": "674",
+        "subTotal": "56"
+      }
+    ]
+  },
+  {
+    "metricName": "RageClickCount",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "sessionsCount": "1500",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "3150",
+        "subTotal": "24"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "sessionsCount": "1100",
+        "sessionsWithMetricPercentage": 1.3,
+        "sessionsWithoutMetricPercentage": 98.7,
+        "pagesViews": "2310",
+        "subTotal": "23"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "sessionsCount": "800",
+        "sessionsWithMetricPercentage": 1.6,
+        "sessionsWithoutMetricPercentage": 98.4,
+        "pagesViews": "1680",
+        "subTotal": "20"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "sessionsCount": "620",
+        "sessionsWithMetricPercentage": 1.9,
+        "sessionsWithoutMetricPercentage": 98.1,
+        "pagesViews": "1302",
+        "subTotal": "19"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "sessionsCount": "480",
+        "sessionsWithMetricPercentage": 2.2,
+        "sessionsWithoutMetricPercentage": 97.8,
+        "pagesViews": "1008",
+        "subTotal": "17"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "sessionsCount": "321",
+        "sessionsWithMetricPercentage": 2.5,
+        "sessionsWithoutMetricPercentage": 97.5,
+        "pagesViews": "674",
+        "subTotal": "13"
+      }
+    ]
+  },
+  {
+    "metricName": "QuickbackClick",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "sessionsCount": "1500",
+        "sessionsWithMetricPercentage": 9,
+        "sessionsWithoutMetricPercentage": 91,
+        "pagesViews": "3150",
+        "subTotal": "216"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "sessionsCount": "1100",
+        "sessionsWithMetricPercentage": 8.5,
+        "sessionsWithoutMetricPercentage": 91.5,
+        "pagesViews": "2310",
+        "subTotal": "150"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "sessionsCount": "800",
+        "sessionsWithMetricPercentage": 8,
+        "sessionsWithoutMetricPercentage": 92,
+        "pagesViews": "1680",
+        "subTotal": "102"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "sessionsCount": "620",
+        "sessionsWithMetricPercentage": 7.5,
+        "sessionsWithoutMetricPercentage": 92.5,
+        "pagesViews": "1302",
+        "subTotal": "74"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "sessionsCount": "480",
+        "sessionsWithMetricPercentage": 7,
+        "sessionsWithoutMetricPercentage": 93,
+        "pagesViews": "1008",
+        "subTotal": "54"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "sessionsCount": "321",
+        "sessionsWithMetricPercentage": 6.5,
+        "sessionsWithoutMetricPercentage": 93.5,
+        "pagesViews": "674",
+        "subTotal": "33"
+      }
+    ]
+  },
+  {
+    "metricName": "ExcessiveScroll",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "sessionsCount": "1500",
+        "sessionsWithMetricPercentage": 3,
+        "sessionsWithoutMetricPercentage": 97,
+        "pagesViews": "3150",
+        "subTotal": "72"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "sessionsCount": "1100",
+        "sessionsWithMetricPercentage": 3,
+        "sessionsWithoutMetricPercentage": 97,
+        "pagesViews": "2310",
+        "subTotal": "53"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "sessionsCount": "800",
+        "sessionsWithMetricPercentage": 3,
+        "sessionsWithoutMetricPercentage": 97,
+        "pagesViews": "1680",
+        "subTotal": "38"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "sessionsCount": "620",
+        "sessionsWithMetricPercentage": 3,
+        "sessionsWithoutMetricPercentage": 97,
+        "pagesViews": "1302",
+        "subTotal": "30"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "sessionsCount": "480",
+        "sessionsWithMetricPercentage": 3,
+        "sessionsWithoutMetricPercentage": 97,
+        "pagesViews": "1008",
+        "subTotal": "23"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "sessionsCount": "321",
+        "sessionsWithMetricPercentage": 3,
+        "sessionsWithoutMetricPercentage": 97,
+        "pagesViews": "674",
+        "subTotal": "15"
+      }
+    ]
+  },
+  {
+    "metricName": "ScriptErrorCount",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "sessionsCount": "1500",
+        "sessionsWithMetricPercentage": 4,
+        "sessionsWithoutMetricPercentage": 96,
+        "pagesViews": "3150",
+        "subTotal": "96"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "sessionsCount": "1100",
+        "sessionsWithMetricPercentage": 4.4,
+        "sessionsWithoutMetricPercentage": 95.6,
+        "pagesViews": "2310",
+        "subTotal": "77"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "sessionsCount": "800",
+        "sessionsWithMetricPercentage": 4.8,
+        "sessionsWithoutMetricPercentage": 95.2,
+        "pagesViews": "1680",
+        "subTotal": "61"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "sessionsCount": "620",
+        "sessionsWithMetricPercentage": 5.2,
+        "sessionsWithoutMetricPercentage": 94.8,
+        "pagesViews": "1302",
+        "subTotal": "52"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "sessionsCount": "480",
+        "sessionsWithMetricPercentage": 5.6,
+        "sessionsWithoutMetricPercentage": 94.4,
+        "pagesViews": "1008",
+        "subTotal": "43"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "sessionsCount": "321",
+        "sessionsWithMetricPercentage": 6,
+        "sessionsWithoutMetricPercentage": 94,
+        "pagesViews": "674",
+        "subTotal": "31"
+      }
+    ]
+  },
+  {
+    "metricName": "ErrorClickCount",
+    "information": [
+      {
+        "URL": "https://codebasics.io/",
+        "sessionsCount": "1500",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "3150",
+        "subTotal": "24"
+      },
+      {
+        "URL": "https://codebasics.io/courses",
+        "sessionsCount": "1100",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "2310",
+        "subTotal": "18"
+      },
+      {
+        "URL": "https://codebasics.io/bootcamps/data-analytics",
+        "sessionsCount": "800",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "1680",
+        "subTotal": "13"
+      },
+      {
+        "URL": "https://codebasics.io/courses/power-bi-data-analysis?utm_source=yt&ref=abc",
+        "sessionsCount": "620",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "1302",
+        "subTotal": "10"
+      },
+      {
+        "URL": "https://codebasics.io/login",
+        "sessionsCount": "480",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "1008",
+        "subTotal": "8"
+      },
+      {
+        "URL": "https://codebasics.io/checkout",
+        "sessionsCount": "321",
+        "sessionsWithMetricPercentage": 1,
+        "sessionsWithoutMetricPercentage": 99,
+        "pagesViews": "674",
+        "subTotal": "5"
+      }
+    ]
+  }
+]
