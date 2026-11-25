@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Status** | Approved for build (v1.1) |
+| **Status** | Approved for build (v1.2) |
 | **Last updated** | 2026-11-25 |
 | **Repo** | `maulik-codebasics/cb-clarity-metrics` |
 
@@ -18,6 +18,14 @@
 | 6 | **URL dimension values are capped at 2,000 characters**, after query strings are stripped, so they stay indexable. | §10 |
 | 7 | **`pull_configs` table** added. Pull configs are stored in the DB and seeded from `pulls.config.ts`. | §5 |
 | 8 | **Runs record their data window** (`window_start`, `window_end`), so a late run's shifted window is visible. | §4.6, §5 |
+
+### Changes in v1.2 (found while building the ETL core)
+
+| # | Change | Section |
+|---|---|---|
+| 9 | **New error code `SERVER_ERROR`** for Clarity 5xx responses. The original list had no code for them, and `NETWORK_ERROR` or `UNKNOWN` would mislead on the runs page. | §4.4 |
+| 10 | **After a 429 (or an exhausted budget), the run's remaining pulls are skipped** (`SKIPPED_BUDGET`) instead of being called. Further calls would also get 429. | §4.4 |
+| 11 | **Timeouts are not retried.** Only network errors and 5xx are, as the original spec says. A 60 s timeout may already have counted as a call on Clarity's side. | §4.4 |
 
 ---
 
@@ -124,13 +132,14 @@ Pulls are defined in a typed config file (`src/etl/pulls.config.ts`) and seeded 
 - **Order per pull:** (1) call the API, (2) store the raw JSON, (3) parse and flatten, (4) write the metrics.
 - **Reprocess:** if parsing fails, the raw response is kept. `npm run etl:reprocess -- --runId=...` (or the UI action) re-parses stored raw responses **without spending an API call**. It creates a new run with `trigger = REPROCESS`, `api_calls_used = 0` and `reprocess_of_run_id` pointing at the original.
 - **Retries:**
-  - Network errors and 5xx: up to 2 retries with exponential backoff. Each retry counts as an API call and is a separate step row (`attempt` 1..3).
-  - **429: no retry** (`RATE_LIMITED`).
+  - Network errors and 5xx (`NETWORK_ERROR`, `SERVER_ERROR`): up to 2 retries with exponential backoff. Each retry counts as an API call and is a separate step row (`attempt` 1..3).
+  - **429: no retry** (`RATE_LIMITED`). The run's remaining pulls are skipped too (`SKIPPED_BUDGET`, error code `RATE_LIMITED`), since Clarity would reject them as well.
+  - Timeouts: no retry (`TIMEOUT`).
   - 401/403: no retry (`AUTH_ERROR`).
   - 400: no retry (`BAD_REQUEST`).
 - **Timeouts:** 60 s per request (`TIMEOUT`).
 - **Run status:** `RUNNING`, `SUCCESS` (all enabled pulls OK), `PARTIAL_SUCCESS` (some pulls failed or were skipped), `FAILED`, `SKIPPED_LOCKED`.
-- **Error codes:** `AUTH_ERROR`, `RATE_LIMITED`, `BAD_REQUEST`, `NETWORK_ERROR`, `TIMEOUT`, `PARSE_ERROR`, `DB_ERROR`, `BUDGET_EXHAUSTED`, `UNKNOWN`.
+- **Error codes:** `AUTH_ERROR`, `RATE_LIMITED`, `BAD_REQUEST`, `SERVER_ERROR`, `NETWORK_ERROR`, `TIMEOUT`, `PARSE_ERROR`, `DB_ERROR`, `BUDGET_EXHAUSTED`, `UNKNOWN`.
 - Each failure stores a human-readable `error_message` and a sanitized `error_details` (JSON: HTTP status, response snippet, stack). **The API token is never stored or logged.**
 - **Stale run recovery:** at the start of each run, any run left `RUNNING` for more than 30 minutes is marked `FAILED` with `error_code = UNKNOWN` and the message "Run did not complete (process killed or timed out)".
 
