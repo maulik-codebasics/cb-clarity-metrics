@@ -1,8 +1,20 @@
 # Clarity Insights
 
-Daily history of Microsoft Clarity behaviour metrics for Codebasics: an ETL that calls the Clarity Data Export API once a day, a pipeline monitoring UI, and an analytics dashboard. The full spec is in [PRD.md](PRD.md).
+Daily history of Microsoft Clarity behaviour metrics for Codebasics: an ETL that calls the Clarity Data Export API once a day, a pipeline monitoring UI, and an analytics dashboard. The full spec is in [PRD.md](PRD.md); how it's built is in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-> **Status:** milestone 1 of 8 (database, ETL core, CLI). The web UI, auth, alerts, Docker setup and full deployment docs come in later milestones.
+> **Status:** milestone 1 of 8 (database, ETL core, CLI). The web UI, auth, alerts, Docker setup and full deployment docs come in later milestones; see the [milestone table](docs/ARCHITECTURE.md#milestones).
+
+## Architecture at a glance
+
+```
+UI pages (/dashboard, /runs, /settings)        ← read the database only
+API routes + Entra ID auth
+Entry points: CLI scripts (cron), HTTP trigger ─┐
+ETL core (src/etl/): runPipeline()  ◀───────────┘  ← the only code that calls Clarity
+Postgres (Prisma)
+```
+
+Details, the run lifecycle and the data model: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Local setup
 
